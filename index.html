@@ -534,6 +534,127 @@ footer a:hover{text-decoration:underline}
   </div>
 </section>
 
+<!-- Reference Section -->
+<section style="padding:24px;max-width:1200px;margin:0 auto">
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px">
+    <h3 style="font-size:15px;font-weight:600;margin-bottom:16px">Complete Property Reference</h3>
+    <div style="overflow-x:auto">
+      <table style="width:100%;border-collapse:collapse;font-size:12px">
+        <thead>
+          <tr style="border-bottom:2px solid var(--border)">
+            <th style="text-align:left;padding:10px;color:var(--text-dim);font-size:11px;text-transform:uppercase">Property</th>
+            <th style="text-align:left;padding:10px;color:var(--text-dim);font-size:11px;text-transform:uppercase">Values</th>
+            <th style="text-align:left;padding:10px;color:var(--text-dim);font-size:11px;text-transform:uppercase">Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">scroll-timeline-name</code></td>
+            <td style="padding:10px;color:var(--text-dim)">none | &lt;dashed-ident&gt;</td>
+            <td style="padding:10px;color:var(--text-dim)">Names a scroll progress timeline on a scroll container.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">scroll-timeline-axis</code></td>
+            <td style="padding:10px;color:var(--text-dim)">block | inline | y | x</td>
+            <td style="padding:10px;color:var(--text-dim)">Which scroll axis to track. Default: block.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">scroll-timeline</code></td>
+            <td style="padding:10px;color:var(--text-dim)">&lt;name&gt; &lt;axis&gt;</td>
+            <td style="padding:10px;color:var(--text-dim)">Shorthand for scroll-timeline-name and scroll-timeline-axis.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">view-timeline-name</code></td>
+            <td style="padding:10px;color:var(--text-dim)">none | &lt;dashed-ident&gt;</td>
+            <td style="padding:10px;color:var(--text-dim)">Names a view progress timeline on the subject element.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">view-timeline-axis</code></td>
+            <td style="padding:10px;color:var(--text-dim)">block | inline | y | x</td>
+            <td style="padding:10px;color:var(--text-dim)">Which axis the view progress timeline tracks.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">view-timeline-inset</code></td>
+            <td style="padding:10px;color:var(--text-dim)">&lt;length-percentage&gt;{1,2}</td>
+            <td style="padding:10px;color:var(--text-dim)">Adjusts the view range inward from the scrollport edges.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">animation-timeline</code></td>
+            <td style="padding:10px;color:var(--text-dim)">auto | none | &lt;dashed-ident&gt; | scroll() | view()</td>
+            <td style="padding:10px;color:var(--text-dim)">Specifies which timeline drives the animation instead of time.</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border)">
+            <td style="padding:10px"><code style="color:var(--cyan)">animation-range</code></td>
+            <td style="padding:10px;color:var(--text-dim)">normal | &lt;range-name&gt; &lt;%&gt;</td>
+            <td style="padding:10px;color:var(--text-dim)">Maps animation to a sub-range of the timeline. Range names: entry, exit, contain, cover.</td>
+          </tr>
+          <tr>
+            <td style="padding:10px"><code style="color:var(--cyan)">timeline-scope</code></td>
+            <td style="padding:10px;color:var(--text-dim)">none | &lt;dashed-ident&gt;</td>
+            <td style="padding:10px;color:var(--text-dim)">Extends timeline lookup scope to descendants and siblings.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px;margin-bottom:20px">
+    <h3 style="font-size:15px;font-weight:600;margin-bottom:16px">Anonymous Timeline Functions</h3>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+      <div style="padding:16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)">
+        <h4 style="font-size:13px;color:var(--accent);margin-bottom:8px">scroll()</h4>
+        <code style="font-size:12px;color:var(--cyan);display:block;margin-bottom:8px">animation-timeline: scroll();</code>
+        <p style="font-size:12px;color:var(--text-dim);line-height:1.6">Creates an anonymous scroll progress timeline from the nearest scroll container. Optionally specify a scroller and axis:</p>
+        <ul style="font-size:11px;color:var(--text-dim);padding-left:16px;margin-top:8px;line-height:2">
+          <li><code style="color:var(--cyan)">scroll()</code> — nearest ancestor, block axis</li>
+          <li><code style="color:var(--cyan)">scroll(root)</code> — document scroll</li>
+          <li><code style="color:var(--cyan)">scroll(self)</code> — element's own scroll</li>
+          <li><code style="color:var(--cyan)">scroll(nearest x)</code> — nearest, inline axis</li>
+        </ul>
+      </div>
+      <div style="padding:16px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)">
+        <h4 style="font-size:13px;color:var(--green);margin-bottom:8px">view()</h4>
+        <code style="font-size:12px;color:var(--cyan);display:block;margin-bottom:8px">animation-timeline: view();</code>
+        <p style="font-size:12px;color:var(--text-dim);line-height:1.6">Creates an anonymous view progress timeline tracking the element's visibility in its scroll container:</p>
+        <ul style="font-size:11px;color:var(--text-dim);padding-left:16px;margin-top:8px;line-height:2">
+          <li><code style="color:var(--cyan)">view()</code> — block axis visibility</li>
+          <li><code style="color:var(--cyan)">view(inline)</code> — inline axis visibility</li>
+          <li><code style="color:var(--cyan)">view(x)</code> — horizontal visibility</li>
+          <li><code style="color:var(--cyan)">view(y)</code> — vertical visibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:20px">
+    <h3 style="font-size:15px;font-weight:600;margin-bottom:16px">Browser Support</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px">
+      <div style="padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-align:center">
+        <div style="font-size:24px;margin-bottom:4px">&#127760;</div>
+        <strong style="color:var(--green);font-size:13px">Chrome 115+</strong>
+        <p style="font-size:11px;color:var(--text-dim);margin-top:4px">Full support including scroll(), view(), animation-range</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-align:center">
+        <div style="font-size:24px;margin-bottom:4px">&#127760;</div>
+        <strong style="color:var(--green);font-size:13px">Edge 115+</strong>
+        <p style="font-size:11px;color:var(--text-dim);margin-top:4px">Same as Chrome (Chromium-based)</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-align:center">
+        <div style="font-size:24px;margin-bottom:4px">&#128038;</div>
+        <strong style="color:var(--yellow);font-size:13px">Firefox</strong>
+        <p style="font-size:11px;color:var(--text-dim);margin-top:4px">Partial support. scroll-timeline behind flag.</p>
+      </div>
+      <div style="padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);text-align:center">
+        <div style="font-size:24px;margin-bottom:4px">&#127823;</div>
+        <strong style="color:var(--red);font-size:13px">Safari</strong>
+        <p style="font-size:11px;color:var(--text-dim);margin-top:4px">No support yet. Use @supports for detection.</p>
+      </div>
+    </div>
+    <div style="margin-top:12px;padding:12px;background:var(--bg);border:1px solid var(--border);border-radius:var(--radius)">
+      <h4 style="font-size:12px;color:var(--accent);margin-bottom:8px">Feature Detection</h4>
+      <code style="font-size:12px;color:var(--cyan);line-height:2">@supports (animation-timeline: scroll()) {<br>&nbsp;&nbsp;/* Scroll-driven animations supported */<br>}<br><br>/* JavaScript */<br>const supported = CSS.supports('animation-timeline', 'scroll()');</code>
+    </div>
+  </div>
+</section>
+
 <footer>
   <a href="https://yurukusa.github.io/dev-toolkit/">Dev Toolkit</a> — CSS Scroll Timeline Playground
 </footer>
